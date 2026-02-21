@@ -21,10 +21,7 @@ export default function Home() {
     try {
       setLoading(true);
 
-      const response = await axios.post(
-        "http://localhost:5000/review",
-        { url }
-      );
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/review`, { url });
 
       navigate("/review", { state: { review: response.data } });
 

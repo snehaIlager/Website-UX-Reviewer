@@ -5,7 +5,7 @@ export default function Status() {
   const [status, setStatus] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/status")
+    axios.get(`${import.meta.env.VITE_API_URL}/status`)
       .then(res => setStatus(res.data))
       .catch(() => setStatus({ error: "Failed to fetch status" }));
   }, []);

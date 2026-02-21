@@ -7,7 +7,7 @@ export default function Reviews() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/status`)
+    axios.get(`${import.meta.env.VITE_API_URL}/review/all`)
       .then(res => setReviews(res.data))
       .catch(() => {});
   }, []);
